@@ -33,6 +33,10 @@ h1, h2, h3, h3, h4, h5, h6, p, li {
 	$primaryBlack: rgba(0,0,0,.87);
 }
 
+h6 {
+	font-weight: 800;
+}
+
 a {
 	text-decoration: none;
 	color: #href;
@@ -40,6 +44,13 @@ a {
 
 .subtext {
 	color: $secondaryBlack;
+}
+
+.caption {
+	text-align: center;
+	color: $secondaryBlack;
+	font-style: italic;
+	font-size: 12px;
 }
 
 
@@ -105,10 +116,41 @@ article {
 	position: relative;
 	padding-bottom: 60px;
 
+	.one-up {
+		img {
+			width: 100%;
+		}	
+	}
+
+	.two-up {
+		width: 50%;
+		float: left;
+		img {
+			width: 100%;
+		}
+	}
+
+	.four-up {
+		width: 25%;
+		float: left;
+		img {
+			width: 95%;
+		}
+	}
+
+	.four-up:last-child {
+		margin-right: 0;
+	}
+
+	h6 { 
+		margin-top: 40px;
+	}
+
 	.backTo-footer {
 		position: fixed;
-		bottom:20px;
-		left: 20px;
+		bottom:0px;
+		left: 0px;
+		width: 100%;
 		text-align: center;
 		padding: 10px 0;
 		color: $href;

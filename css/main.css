@@ -22,12 +22,21 @@ html {
 h1, h2, h3, h3, h4, h5, h6, p, li {
   font-family: 'Montserrat', sans-serif; }
 
+h6 {
+  font-weight: 800; }
+
 a {
   text-decoration: none;
   color: #href; }
 
 .subtext {
   color: rgba(0, 0, 0, 0.57); }
+
+.caption {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.57);
+  font-style: italic;
+  font-size: 12px; }
 
 /*  
 	----------------------------------------------- 
@@ -66,10 +75,27 @@ article .linked-list {
   display: none;
   position: relative;
   padding-bottom: 60px; }
+  .project-details .one-up img {
+    width: 100%; }
+  .project-details .two-up {
+    width: 50%;
+    float: left; }
+    .project-details .two-up img {
+      width: 100%; }
+  .project-details .four-up {
+    width: 25%;
+    float: left; }
+    .project-details .four-up img {
+      width: 95%; }
+  .project-details .four-up:last-child {
+    margin-right: 0; }
+  .project-details h6 {
+    margin-top: 40px; }
   .project-details .backTo-footer {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
     text-align: center;
     padding: 10px 0;
     color: #00a0dd;

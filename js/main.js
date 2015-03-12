@@ -13,7 +13,7 @@ function setFooterDimentions() {
 function onResizeEvent() {
 	$(window).resize(function() {
 		setHTMLDimentions();
-		setFooterDimentions();
+		// setFooterDimentions();
 	})
 }
 
@@ -40,6 +40,7 @@ function toggleProjectDetails(project) {
 	$('.intro').animate({height: 'toggle'});
 	$('.linked-list li').not(project).fadeToggle();
 	$(targetProject).animate({height:'toggle'});	
+	$('.frame').fadeToggle();
 }
 
 // What happens when the user clicks on the menu icon...
@@ -59,7 +60,7 @@ function selectCloseIconEvent() {
 
 $(function initialize() {
 	setHTMLDimentions();
-	setFooterDimentions();
+	// setFooterDimentions();
 	onResizeEvent();
 	selectProjectEvent();
 	selectBackToProjectEvent();
