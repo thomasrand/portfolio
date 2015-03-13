@@ -12,8 +12,8 @@ function setFooterDimentions() {
 // Set the padding-top of the project header based on the body position
 function setProjectHeaderPadding() {
 	var bodyPosition = $('body').offset().top;
-	$('.project-header').css('padding-top', bodyPosition * 2);
-	$('.project-details').css('padding-top', bodyPosition * 2);
+	$('.project-header').css('padding-top', bodyPosition * 3);
+	$('.project-details').css('padding-top', bodyPosition * 3);
 }
 
 // What happens when the user resizes the browser...
@@ -45,14 +45,11 @@ function toggleProjectDetails(project) {
 	var targetProject = $(project).next('.project-details');
 	var projectName = $(project).attr('project-name');
 
-	$('.intro').animate({height: 'toggle'});
 	$('.linked-list li').not(project).fadeToggle();
-	$(targetProject).animate({height:'toggle'});	
+	$(targetProject).animate({height:'toggle'}, "swing");	
 	$('.frame').fadeToggle();
 	$('.linked-list .projectType-label').fadeToggle();
-	$('header').animate({height: 'toggle'}, function() {
-		
-	});
+	$('header').animate({height: 'toggle'}, 'swing');
 
 	$(targetProject).find('.project-header').toggleClass('header-transformed');
 }
@@ -64,21 +61,30 @@ function selectMenuIconEvent() {
 	});
 }
 
-// What happens when the user clicks the close-menu icons...
+// What happens when the user clicks the close icons...
 function selectCloseIconEvent() {
 	$('.close').click(function() {
-		$('#menu-overlay').fadeOut();
+		var targetProject = $(this).parents('.project-details').prev('li');
+		toggleProjectDetails(targetProject);
 	});
 }
 
 
 $(function initialize() {
-	setHTMLDimentions();
-	setProjectHeaderPadding();
-	// setFooterDimentions();
 	onResizeEvent();
+
+	// Initialize Click Event Listeners
 	selectProjectEvent();
 	selectBackToProjectEvent();
 	selectCloseIconEvent();
 	selectMenuIconEvent();
+
+	// Initialize Dimention Setters
+	setHTMLDimentions();
+	setProjectHeaderPadding();
+	
+	
+
+
+
 });

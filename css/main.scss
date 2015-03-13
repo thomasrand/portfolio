@@ -18,6 +18,11 @@ html {
 	z-index: 0;
 }
 
+body {
+	// FlowType Setting
+	font-size: 18px;
+}
+
 
 /*  
 	----------------------------------------------- 
@@ -28,14 +33,48 @@ $primaryBlack: rgba(0,0,0,.87);
 $secondaryBlack: rgba(0,0,0,.57);
 $href: #00a0dd;
 
+$blueBkg: #3498DB;
+$blueFont: #22638F;
+$purpleBkg: #9B59B6;
+$purpleFont: #714185;
+$greenBkg: #1ABC9C;
+$greenFont: #138A72;
+
 
 h1, h2, h3, h3, h4, h5, h6, p, li {
 	font-family: 'Montserrat', sans-serif;
 	$primaryBlack: rgba(0,0,0,.87);
+
+	// FlowType Setting
+	line-height: 1.45;
+}
+
+h1 {
+	// FlowType Setting
+	font-size: 4em;
+}
+
+h2 {
+	// FlowType Setting
+	font-size: 3em;
+}
+
+h3 {
+	// FlowType Setting
+	font-size: 2em;
+}
+
+h4, h5, h6 {
+	// FlowType Setting
+	font-size: 1em;
+}
+
+h5 {
+
 }
 
 h6 {
-	font-weight: 800;
+	font-weight: 700;
 }
 
 a {
@@ -53,6 +92,51 @@ a {
 	font-style: italic;
 	font-size: 12px;
 }
+
+/*  
+	----------------------------------------------- 
+	---------------- COLOR THEMES ----------------- 
+	----------------------------------------------- 
+*/
+
+.blue {
+	h3 {
+		color: $blueFont;
+	}
+	.project-header {
+		background: $blueBkg;
+		.header-detail {
+			color: $blueFont;
+		}	
+	}
+}
+
+.purple {
+	h3 {
+		color: $purpleFont;
+	}
+	.project-header {
+		background: $purpleBkg;
+		.header-detail {
+			color: $purpleFont;
+		}	
+	}
+}
+
+.green {
+	h3 {
+		color: $greenFont;
+	}
+	.project-header {
+		background: $greenBkg;
+		.header-detail {
+			color: $greenFont;
+
+
+		}	
+	}
+}
+
 
 
 
@@ -91,6 +175,34 @@ header {
 
 }
 
+nav {
+	position: absolute;
+	top: 0;
+	right:0;
+
+	ul {
+		list-style: none;
+		li {
+			float: left;
+			margin-left: 20px;
+			
+			a {
+				color: $secondaryBlack;	
+			}
+
+			.active {
+				color: $primaryBlack;
+			}
+
+			a:hover {
+				cursor: pointer;
+				color: $primaryBlack;
+				transition: .5s;
+			}
+		}
+	}
+}
+
 
 /*  
 	----------------------------------------------- 
@@ -107,9 +219,12 @@ article {
 			color: $href;	
 			cursor: pointer;
 			text-align: center;
-			font-size: 18px;
 			z-index: 100;
-			position: relative
+			position: relative;
+		
+			h3:hover {
+				text-decoration: underline;
+			}
 		}
 
 		.projectType-label {
@@ -135,7 +250,7 @@ article {
 		position: absolute;
 		top: 0;
 		left: 0;
-		background: #EDEDED;
+		// background: #EDEDED;
 		z-index: 10;
 		width: 100%;
 
@@ -148,22 +263,45 @@ article {
 			max-width: 600px;
 		}
 
-		.one-column {
-			display: table;
+		.row {
+			
 			margin: 0 auto;
 		}
 
 		.header-detail {
-			float: left;
 
 			h6 {
 				margin: 0 0 10px 0;
 			}
+
+			a {
+				color: inherit;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
 		}
 
-		.header-detail:first-child {
-			margin-right: 120px;
+		.container {
+		
+
+			.close {
+				position: absolute;
+				top: 40px;
+				right: 40px;
+				cursor: pointer;
+				opacity: 0.5;
+
+			img {
+				width: 20px;
+			}
 		}
+	}
+
+	.close:hover {
+		opacity: 1;
+	}
 
 
 	}
@@ -264,23 +402,6 @@ article {
 		}
 
 	}
-
-	.close {
-		position: absolute;
-		top: 40px;
-		right: 40px;
-		cursor: pointer;
-		opacity: 0.5;
-
-		img {
-			width: 20px;
-		}
-	}
-
-	.close:hover {
-		opacity: 1;
-	}
-
 }
 
 

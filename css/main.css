@@ -15,16 +15,32 @@ html {
   left: 0;
   z-index: 0; }
 
+body {
+  font-size: 18px; }
+
 /*  
 	----------------------------------------------- 
 	-------------------- FONTS -------------------- 
 	----------------------------------------------- 
 */
 h1, h2, h3, h3, h4, h5, h6, p, li {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.45; }
+
+h1 {
+  font-size: 4em; }
+
+h2 {
+  font-size: 3em; }
+
+h3 {
+  font-size: 2em; }
+
+h4, h5, h6 {
+  font-size: 1em; }
 
 h6 {
-  font-weight: 800; }
+  font-weight: 700; }
 
 a {
   text-decoration: none;
@@ -38,6 +54,32 @@ a {
   color: rgba(0, 0, 0, 0.57);
   font-style: italic;
   font-size: 12px; }
+
+/*  
+	----------------------------------------------- 
+	---------------- COLOR THEMES ----------------- 
+	----------------------------------------------- 
+*/
+.blue h3 {
+  color: #22638F; }
+.blue .project-header {
+  background: #3498DB; }
+  .blue .project-header .header-detail {
+    color: #22638F; }
+
+.purple h3 {
+  color: #714185; }
+.purple .project-header {
+  background: #9B59B6; }
+  .purple .project-header .header-detail {
+    color: #714185; }
+
+.green h3 {
+  color: #138A72; }
+.green .project-header {
+  background: #1ABC9C; }
+  .green .project-header .header-detail {
+    color: #138A72; }
 
 /*  
 	----------------------------------------------- 
@@ -61,6 +103,24 @@ header {
       width: 20px;
       cursor: pointer; }
 
+nav {
+  position: absolute;
+  top: 0;
+  right: 0; }
+  nav ul {
+    list-style: none; }
+    nav ul li {
+      float: left;
+      margin-left: 20px; }
+      nav ul li a {
+        color: rgba(0, 0, 0, 0.57); }
+      nav ul li .active {
+        color: rgba(0, 0, 0, 0.87); }
+      nav ul li a:hover {
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.87);
+        transition: .5s; }
+
 /*  
 	----------------------------------------------- 
 	-------------------- ARTICLE ------------------ 
@@ -72,9 +132,10 @@ article .linked-list {
     color: #00a0dd;
     cursor: pointer;
     text-align: center;
-    font-size: 18px;
     z-index: 100;
     position: relative; }
+    article .linked-list li h3:hover {
+      text-decoration: underline; }
   article .linked-list .projectType-label {
     text-align: center;
     color: rgba(0, 0, 0, 0.57);
@@ -90,7 +151,6 @@ article .linked-list {
     position: absolute;
     top: 0;
     left: 0;
-    background: #EDEDED;
     z-index: 10;
     width: 100%;
     -webkit-transform-style: preserve-3d;
@@ -99,15 +159,24 @@ article .linked-list {
     -webkit-transform-origin: top; }
     .project-details .project-header .wrapper {
       max-width: 600px; }
-    .project-details .project-header .one-column {
-      display: table;
+    .project-details .project-header .row {
       margin: 0 auto; }
-    .project-details .project-header .header-detail {
-      float: left; }
-      .project-details .project-header .header-detail h6 {
-        margin: 0 0 10px 0; }
-    .project-details .project-header .header-detail:first-child {
-      margin-right: 120px; }
+    .project-details .project-header .header-detail h6 {
+      margin: 0 0 10px 0; }
+    .project-details .project-header .header-detail a {
+      color: inherit; }
+    .project-details .project-header .header-detail a:hover {
+      text-decoration: underline; }
+    .project-details .project-header .container .close {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      cursor: pointer;
+      opacity: 0.5; }
+      .project-details .project-header .container .close img {
+        width: 20px; }
+    .project-details .project-header .close:hover {
+      opacity: 1; }
   .project-details .header-transformed {
     -webkit-transform: perspective(30px) rotateX(0deg); }
   .project-details .one-up img {
@@ -169,15 +238,5 @@ article .linked-list {
         color: #ffffff; }
       #menu-overlay section li a:hover {
         color: #00a0dd; }
-  #menu-overlay .close {
-    position: absolute;
-    top: 40px;
-    right: 40px;
-    cursor: pointer;
-    opacity: 0.5; }
-    #menu-overlay .close img {
-      width: 20px; }
-  #menu-overlay .close:hover {
-    opacity: 1; }
 
 /*# sourceMappingURL=main.css.map */
